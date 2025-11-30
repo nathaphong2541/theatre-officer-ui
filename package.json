@@ -21,6 +21,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
+    "start:dev": "ng serve --open --port 4300",
     "build:dev": "ng build -c production",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
