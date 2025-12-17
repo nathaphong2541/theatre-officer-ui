@@ -3,90 +3,60 @@ import { MenuItem } from '../models/menu.model';
 export class Menu {
   public static pages: MenuItem[] = [
     {
-      group: 'Base',
-      separator: false,
-      items: [
-        {
-          icon: 'assets/icons/heroicons/outline/chart-pie.svg',
-          label: 'Dashboard',
-          route: '/dashboard',
-          children: [{ label: 'Nfts', route: '/dashboard/nfts' }],
-        },
-        {
-          icon: 'assets/icons/heroicons/outline/lock-closed.svg',
-          label: 'Auth',
-          route: '/auth',
-          children: [
-            { label: 'Sign up', route: '/auth/sign-up' },
-            { label: 'Sign in', route: '/auth/sign-in' },
-            { label: 'Forgot Password', route: '/auth/forgot-password' },
-            { label: 'New Password', route: '/auth/new-password' },
-            { label: 'Two Steps', route: '/auth/two-steps' },
-          ],
-        },
-        {
-          icon: 'assets/icons/heroicons/outline/exclamation-triangle.svg',
-          label: 'Errors',
-          route: '/errors',
-          children: [
-            { label: '404', route: '/errors/404' },
-            { label: '500', route: '/errors/500' },
-          ],
-        },
-        {
-          icon: 'assets/icons/heroicons/outline/cube.svg',
-          label: 'Components',
-          route: '/components',
-          children: [{ label: 'Table', route: '/components/table' }],
-        },
-      ],
-    },
-    {
-      group: 'Collaboration',
+      group: $localize`:@@menu_group_master:Master Data`,
       separator: true,
       items: [
         {
-          icon: 'assets/icons/heroicons/outline/download.svg',
-          label: 'Download',
-          route: '/download',
+          icon: 'fa-regular fa-building',
+          label: $localize`:@@menu_department:Department`,
+          route: '/en/departments',
         },
         {
-          icon: 'assets/icons/heroicons/outline/gift.svg',
-          label: 'Gift Card',
-          route: '/gift',
+          icon: 'fa-solid fa-briefcase',
+          label: $localize`:@@menu_position:Position`,
+          route: '/en/positions',
         },
         {
-          icon: 'assets/icons/heroicons/outline/users.svg',
-          label: 'Users',
-          route: '/users',
-        },
-      ],
-    },
-    {
-      group: 'Config',
-      separator: false,
-      items: [
-        {
-          icon: 'assets/icons/heroicons/outline/cog.svg',
-          label: 'Settings',
-          route: '/settings',
+          icon: 'fa-solid fa-screwdriver-wrench',
+          label: $localize`:@@menu_skill:Skill`,
+          route: '/en/skills',
         },
         {
-          icon: 'assets/icons/heroicons/outline/bell.svg',
-          label: 'Notifications',
-          route: '/gift',
+          icon: 'fa-solid fa-location-dot',
+          label: $localize`:@@menu_work_location:Work Location`,
+          route: '/en/work-locations',
         },
         {
-          icon: 'assets/icons/heroicons/outline/folder.svg',
-          label: 'Folders',
-          route: '/folders',
-          children: [
-            { label: 'Current Files', route: '/folders/current-files' },
-            { label: 'Downloads', route: '/folders/download' },
-            { label: 'Trash', route: '/folders/trash' },
-          ],
+          icon: 'fa-solid fa-users',
+          label: $localize`:@@menu_unions:Unions / Guilds / Memberships`,
+          route: '/en/unions',
         },
-      ],
-    },
+        {
+          icon: 'fa-solid fa-graduation-cap',
+          label: $localize`:@@menu_experience_level:Experience Level`,
+          route: '/en/experience-levels',
+        },
+        {
+          icon: 'fa-solid fa-handshake',
+          label: $localize`:@@menu_partner_directory:Partner Directory`,
+          route: '/en/partner-directories',
+        },
+        {
+          icon: 'fa-solid fa-heart',
+          label: $localize`:@@menu_gender_identity:Gender Identity`,
+          route: '/en/gender-identities',
+        },
+        {
+          icon: 'fa-regular fa-id-card',
+          label: $localize`:@@menu_personal_identity:Personal Identity`,
+          route: '/en/personal-identities',
+        },
+        {
+          icon: 'fa-solid fa-earth-americas',
+          label: $localize`:@@menu_racial_identity:Racial Identity`,
+          route: '/en/racial-identities',
+        }
+      ]
+    }
   ];
 }

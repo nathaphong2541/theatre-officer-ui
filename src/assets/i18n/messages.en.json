@@ -1,3 +1,14 @@
 {
-  "homeTitle": "กำหนดชื่อระบบของคุณ"
+  "homeTitle": "Name your system",
+  "menu_group_master": "Master Data",
+  "menu_department": "Department",
+  "menu_position": "Position",
+  "menu_skill": "Skill",
+  "menu_work_location": "Work Location",
+  "menu_unions": "Unions",
+  "menu_experience_level": "Experience Level",
+  "menu_partner_directory": "Partner Directory",
+  "menu_gender_identity": "Gender Identity",
+  "menu_personal_identity": "Personal Identity",
+  "menu_racial_identity": "Racial Identity"
 }

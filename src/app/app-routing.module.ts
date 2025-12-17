@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LangGuard } from './core/guards/lang.guard';
+import { AuthGuard } from './core/guards/auth.guard';
+import { GuestGuard } from './core/guards/guest.guard';
 
 const routes: Routes = [
   // root ให้ redirect ไป /th
@@ -8,6 +11,7 @@ const routes: Routes = [
   // locale wrapper
   {
     path: ':lang',
+    canActivate: [LangGuard],
     children: [
       {
         path: '',
@@ -16,6 +20,7 @@ const routes: Routes = [
       },
       {
         path: 'auth',
+        canMatch: [GuestGuard],   // 👈 เพิ่มตรงนี้
         loadChildren: () =>
           import('./modules-admin/auth/auth.module').then((m) => m.AuthModule),
       },

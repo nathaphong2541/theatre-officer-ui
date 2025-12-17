@@ -11,14 +11,13 @@ import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
 import { AppRoutingModule } from './app/app-routing.module';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { AuthErrorInterceptor } from './app/core/guards/auth-error.interceptor';
 import { TokenInterceptor } from './app/core/guards/token.interceptor';
+import { AuthErrorInterceptor } from './app/core/guards/auth-error.interceptor';
 import { AuthService } from './app/modules-admin/auth/service/auth.service';
 
 export function initSession(auth: AuthService) {
   return () => auth.checkSession().toPromise(); // เรียกเฉพาะกรณีมี flag; ไม่งั้น noop
 }
-
 
 // ลงทะเบียนข้อมูล locale (วันที่/ตัวเลข ฯลฯ)
 registerLocaleData(localeTh, 'th');
