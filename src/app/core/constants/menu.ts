@@ -11,16 +11,16 @@ export class Menu {
           label: $localize`:@@menu_department:Department`,
           route: '/en/departments',
         },
-        {
-          icon: 'fa-solid fa-briefcase',
-          label: $localize`:@@menu_position:Position`,
-          route: '/en/positions',
-        },
-        {
-          icon: 'fa-solid fa-screwdriver-wrench',
-          label: $localize`:@@menu_skill:Skill`,
-          route: '/en/skills',
-        },
+        // {
+        //   icon: 'fa-solid fa-briefcase',
+        //   label: $localize`:@@menu_position:Position`,
+        //   route: '/en/positions',
+        // },
+        // {
+        //   icon: 'fa-solid fa-screwdriver-wrench',
+        //   label: $localize`:@@menu_skill:Skill`,
+        //   route: '/en/skills',
+        // },
         {
           icon: 'fa-solid fa-location-dot',
           label: $localize`:@@menu_work_location:Work Location`,

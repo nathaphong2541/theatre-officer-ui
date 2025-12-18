@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { DepartmentComponent } from './pages/department/department.component';
 import { PositionComponent } from './pages/position/position.component';
+import { ListPositionByDeptComponent } from './components/department/list-position-by-dept/list-position-by-dept.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'departments', pathMatch: 'full' },
       { path: 'departments', component: DepartmentComponent },
+      { path: 'list-position-by-dept/:deptId', component: ListPositionByDeptComponent },
       { path: 'positions', component: PositionComponent },
       { path: '**', redirectTo: 'errors/404' },
     ],
@@ -21,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DashboardRoutingModule {}
+export class DashboardRoutingModule { }

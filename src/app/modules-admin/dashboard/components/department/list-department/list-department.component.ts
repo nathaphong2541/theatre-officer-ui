@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { Department, DepartmentService } from 'src/app/modules-admin/layout/services/master/department.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-department',
@@ -33,7 +34,10 @@ export class ListDepartmentComponent implements OnInit {
     description: [''],
   });
 
-  constructor(private fb: FormBuilder, private departmentService: DepartmentService) { }
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    private departmentService: DepartmentService) { }
 
   ngOnInit(): void {
     this.loadDepartments();
@@ -181,4 +185,9 @@ export class ListDepartmentComponent implements OnInit {
   }
 
   trackById = (_: number, item: Department) => (item as any).id ?? item.nameEn ?? _;
+
+  addPosition(d: any) {
+    console.log(d);
+    this.router.navigate(['/en/list-position-by-dept/', d.id]);
+  }
 }

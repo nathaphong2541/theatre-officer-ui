@@ -53,4 +53,16 @@ export class PositionService {
     delete(id: number): Observable<void> {
         return this.http.delete<void>(`${this.baseUrl}/${id}`);
     }
+
+    // ✅ GET: List By Department (Paged)
+    listByDepartment(departmentId: number, page: number, size: number): Observable<PageResponse<Position>> {
+        const params = new HttpParams()
+            .set('page', String(page))
+            .set('size', String(size));
+
+        return this.http.get<PageResponse<Position>>(
+            `${this.baseUrl}/by-department/${departmentId}`,
+            { params }
+        );
+    }
 }
