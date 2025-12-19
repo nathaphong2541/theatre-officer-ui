@@ -3,12 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { BaseMaster } from './model/base';
+import { ApiPage } from './department.service';
 
 @Injectable({ providedIn: 'root' })
 export class PartnerDirectoryService {
     private baseUrl = `${environment.apiUrl}/master/partner-directories`;
 
     constructor(private http: HttpClient) { }
+
+    // ✅ ใช้กับหน้า list ที่ต้องมี pagination
+    list(page = 0, size = 5): Observable<ApiPage<BaseMaster>> {
+        return this.http.get<ApiPage<BaseMaster>>(`${this.baseUrl}?page=${page}&size=${size}`);
+    }
 
     getAll() {
         return this.http.get<BaseMaster[]>(this.baseUrl);
